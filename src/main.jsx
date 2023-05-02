@@ -8,6 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './components/Home/Home.jsx';
+import Login from './components/Login/Login.jsx';
+import Blog from './components/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/chef')
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       }
     ]
   },
