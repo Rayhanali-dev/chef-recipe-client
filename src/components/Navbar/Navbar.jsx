@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Banner from '../Banner/Banner';
 
 const Navbar = () => {
     return (
@@ -30,7 +29,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <Banner></Banner>
+            
         </div>
     );
 };

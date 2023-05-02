@@ -10,6 +10,7 @@ import {
 import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Blog from './components/Blog/Blog.jsx';
+import Recipe from './components/Recipe/Recipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/chef')
+        loader: () => fetch('https://chef-recipe-server-seven.vercel.app/chef'),
       },
       {
         path: '/login',
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/recipe',
+        element: <Recipe></Recipe>
       }
     ]
   },
