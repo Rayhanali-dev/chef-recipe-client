@@ -11,6 +11,8 @@ import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import Recipe from './components/Recipe/Recipe.jsx';
+import Register from './components/Register/Register.jsx';
+import AuthProvider from './components/provides/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,12 +29,17 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
         path: '/blog',
         element: <Blog></Blog>
       },
       {
-        path: '/recipe',
-        element: <Recipe></Recipe>
+        path: '/chef/:id',
+        element: <Recipe></Recipe>,
+        loader: ({params}) => fetch(`https://chef-recipe-server-rayhanali-dev.vercel.app/chef/${params.id}`)
       }
     ]
   },
@@ -40,6 +47,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

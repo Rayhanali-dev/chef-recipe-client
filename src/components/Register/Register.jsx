@@ -1,32 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provides/AuthProvider';
 
+const Register = () => {
 
-const Login = () => {
-    const { signIn, googleP } = useContext(AuthContext);
-    const handleLogin = (event) => {
+    const {createUser} = useContext(AuthContext);
+
+    const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        const photo = form.photo.value;
         form.reset();
-        signIn(email, password)
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
-    }
-
-    const hangleGoogle = () => {
-        googleP()
+        console.log(name, email, password, photo);
+        createUser(email, password)
         .then(result => {
-            const loggedGoogle = result.user;
-            console.log(loggedGoogle);
+            const createdUser = result.user;
+            console.log(createdUser);
         })
         .catch(error => {
             console.log(error.message);
@@ -38,10 +30,16 @@ const Login = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-[560px] flex-col">
                     <div className="text-center lg:text-left my-6">
-                        <h1 className="text-5xl font-bold">Login</h1>
+                        <h1 className="text-5xl font-bold">Register</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                        <form className="card-body" onSubmit={handleLogin}>
+                        <form className="card-body" onSubmit={handleRegister}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" name='name' required placeholder="name" className="input input-bordered" />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -54,18 +52,19 @@ const Login = () => {
                                 </label>
                                 <input type="password" name='password' required placeholder="password" className="input input-bordered" />
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" name='photo' required placeholder="Photo URL" className="input input-bordered" />
                             </div>
-                        </form>
-                        <div className='mb-5 -mt-3 px-8 text-center'>
-                            <button onClick={hangleGoogle} className='btn w-full mb-5 btn-primary'>Sign In With Google</button>
-                            <button className='btn w-full btn-primary'>Sign In With Github</button>
-                            <label className='my-5 block'>
-                                <p className='text-center text-xl'>If You New Here! please <Link className='link link-primary' to={`/register`}>Register</Link></p>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Register</button>
+                            </div>
+                            <label className="label">
+                                <p className='text-center text-xl'>Already have an account? please <Link className='link link-primary' to={`/login`}>Login</Link></p>
                             </label>
-                        </div>
-
+                        </form>
                     </div>
                 </div>
             </div>
@@ -73,4 +72,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provides/AuthProvider';
 
 const Navbar = () => {
+    const { user, loggedOut } = useContext(AuthContext);
+
+    const handleLoggedOut = () => {
+        loggedOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
     return (
         <div>
             <div className="bg-base-300">
@@ -16,7 +27,7 @@ const Navbar = () => {
                                 <li><a>Item 3</a></li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost normal-case text-xl">Foxeresto</a>
+                        <Link to={`/`} className="btn btn-ghost normal-case text-xl">Foxeresto</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu gap-6 menu-horizontal px-1">
@@ -25,11 +36,16 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <Link to={`/login`}>Login</Link>
+                        {
+                            user ? <div className='flex gap-6 items-center'>
+                                <img src={user.photoURL} alt="" className='rounded-full bg-slate-500 w-14 h-14' />
+                                <button onClick={handleLoggedOut} className='btn btn-primary'>Log Out</button>
+                            </div> : <button className='btn btn-primary'><Link to={`/login`}>Login</Link></button>
+                        }
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 };
