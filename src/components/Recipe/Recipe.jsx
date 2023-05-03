@@ -21,10 +21,13 @@ const Recipe = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                {
-                    recipes.map(recipe => <RecipeCard key={recipe.recipe_id} recipe={recipe}></RecipeCard>)
-                }
+            <div className='max-w-7xl mx-auto'>
+                <h3 className='text-center text-4xl font-bold my-8'>Recipe Items</h3>
+                <div className='grid grid-cols-3 my-8'>
+                    {
+                        recipes.map(recipe => <RecipeCard key={recipe.recipe_id} recipe={recipe}></RecipeCard>)
+                    }
+                </div>
             </div>
         </div>
     );

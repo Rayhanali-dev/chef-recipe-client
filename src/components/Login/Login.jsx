@@ -4,7 +4,7 @@ import { AuthContext } from '../provides/AuthProvider';
 
 
 const Login = () => {
-    const { signIn, googleP } = useContext(AuthContext);
+    const { signIn, googleP, githubProvider } = useContext(AuthContext);
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,6 +27,17 @@ const Login = () => {
         .then(result => {
             const loggedGoogle = result.user;
             console.log(loggedGoogle);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
+
+    const handleGithub = () => {
+        githubProvider()
+        .then(result => {
+            const loggedGithub = result.user;
+            console.log(loggedGithub);
         })
         .catch(error => {
             console.log(error.message);
@@ -60,7 +71,7 @@ const Login = () => {
                         </form>
                         <div className='mb-5 -mt-3 px-8 text-center'>
                             <button onClick={hangleGoogle} className='btn w-full mb-5 btn-primary'>Sign In With Google</button>
-                            <button className='btn w-full btn-primary'>Sign In With Github</button>
+                            <button onClick={handleGithub} className='btn w-full btn-primary'>Sign In With Github</button>
                             <label className='my-5 block'>
                                 <p className='text-center text-xl'>If You New Here! please <Link className='link link-primary' to={`/register`}>Register</Link></p>
                             </label>
