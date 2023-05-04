@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const RecipeCard = ({ recipe }) => {
     const notify = () => toast("Add To Favourite");
     console.log(recipe);
+    const [disable, setDisable] = useState(false);
+    const handlerAddToFav = () => {
+        setDisable(true)
+        notify();
+    }
     const { name, ingredients, rating, image_url, Method } = recipe;
     return (
         <div>
@@ -18,7 +23,7 @@ const RecipeCard = ({ recipe }) => {
                     <p>Ratings: {rating}</p>
                     <p>Cooking Method: {Method}</p>
                     <div className="card-actions ">
-                        <button onClick={notify}  className="btn btn-primary w-full mt-4">Add To Favourite</button>
+                        <button disabled={disable} onClick={handlerAddToFav}  className="btn btn-primary w-full mt-4">Add To Favourite</button>
                         <ToastContainer></ToastContainer>
                     </div>
                 </div>
