@@ -11,7 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <div className='max-w-7xl mx-auto'>
                 <h3 className='text-center text-3xl font-bold my-16'>Restaurant Chef</h3>
-                <div className='grid grid-cols-2 gap-6 mb-14'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-14'>
                     {
                         chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)
                     }

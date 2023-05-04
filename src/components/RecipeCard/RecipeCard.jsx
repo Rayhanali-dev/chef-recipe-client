@@ -1,12 +1,13 @@
 import React from 'react';
-import ViewRecipe from '../ViewRecipe/ViewRecipe';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RecipeCard = ({ recipe }) => {
+    const notify = () => toast("Add To Favourite");
     console.log(recipe);
     const { name, ingredients, rating, image_url, Method } = recipe;
     return (
         <div>
-            <div className="card w-96 h-[800px] bg-base-100 shadow-2xl">
+            <div className="card h-[800px] bg-base-100 shadow-2xl">
                 <figure><img className='h-[300px] object-cover w-full' src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
@@ -17,7 +18,8 @@ const RecipeCard = ({ recipe }) => {
                     <p>Ratings: {rating}</p>
                     <p>Cooking Method: {Method}</p>
                     <div className="card-actions ">
-                        <button className="btn btn-primary w-full mt-4">Add To Favourite</button>
+                        <button onClick={notify}  className="btn btn-primary w-full mt-4">Add To Favourite</button>
+                        <ToastContainer></ToastContainer>
                     </div>
                 </div>
             </div>

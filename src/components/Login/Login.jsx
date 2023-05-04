@@ -31,6 +31,7 @@ const Login = () => {
         .then(result => {
             const loggedGoogle = result.user;
             console.log(loggedGoogle);
+            navigate(from, { replace: true })
         })
         .catch(error => {
             console.log(error.message);
@@ -42,6 +43,7 @@ const Login = () => {
         .then(result => {
             const loggedGithub = result.user;
             console.log(loggedGithub);
+            navigate(from, { replace: true })
         })
         .catch(error => {
             console.log(error.message);
@@ -51,7 +53,7 @@ const Login = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content w-[560px] flex-col">
+                <div className="hero-content p-0 lg:w-[560px] flex-col">
                     <div className="text-center lg:text-left my-6">
                         <h1 className="text-5xl font-bold">Login</h1>
                     </div>
