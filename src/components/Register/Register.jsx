@@ -4,7 +4,7 @@ import { AuthContext } from '../provides/AuthProvider';
 import { useState } from 'react';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, profile} = useContext(AuthContext);
     const [error, setError] = useState('')
     const handleRegister = (event) => {
         event.preventDefault();
@@ -19,6 +19,16 @@ const Register = () => {
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+        })
+        .catch(error => {
+            setError(error.message)
+            console.log(error.message);
+        })
+        
+        profile(name, photo)
+        .then(result => {
+            const registerUser = result.user;
+            console.log(registerUser);
         })
         .catch(error => {
             setError(error.message)
