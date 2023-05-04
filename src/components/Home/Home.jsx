@@ -5,7 +5,6 @@ import Banner from '../Banner/Banner';
 import FoodGallery from '../FoodGallery/FoodGallery';
 import BookTable from '../BookTable/BookTable';
 
-
 const Home = () => {
     const chefs = useLoaderData();
     console.log(chefs);

@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
 });
 
 const ReactPDF = () => {
-
     return (
         <Document >
             <Page style={styles.body}>
@@ -57,7 +56,6 @@ const ReactPDF = () => {
                 <Text style={styles.text}>
                     Import the PropTypes library in your component using import PropTypes from 'prop-types'; Then Define the expected data types for your props using the propTypes object inside your component. Specify the data type for each prop using PropTypes, such as PropTypes.string, PropTypes.number, PropTypes.bool, etc. Must be Assign the propTypes object to your component using the MyComponent.propTypes syntax.
                 </Text>
-
                 <Text style={styles.qestion}>
                     What is the difference between nodejs and express js.?
                 </Text>
