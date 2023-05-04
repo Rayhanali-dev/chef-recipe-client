@@ -56,7 +56,10 @@ const Navbar = () => {
                         <div className='hidden md:block'>
                             {
                                 user ? <div className='flex gap-6 items-center'>
-                                    <img src={user.photoURL} alt="" className='rounded-full bg-slate-500 w-14 h-14' />
+                                    <div className='group'>
+                                        <img title={user.displayName} src={user.photoURL} alt="" className='rounded-full bg-slate-500 w-14 h-14' />
+                                        
+                                    </div>
                                     <button onClick={handleLoggedOut} className='btn btn-primary'>Log Out</button>
                                 </div> : <button className='btn btn-primary'><Link to={`/login`}>Login</Link></button>
                             }

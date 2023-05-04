@@ -1,9 +1,14 @@
 import React from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import ReactPDF from '../ReactPdf/ReactPDF';
 
 const Blog = () => {
     return (
-        <div className='max-w-7xl mx-auto mt-24'>
-            <div className="collapse mb-6 collapse-arrow">
+        <div className='max-w-7xl mx-auto mt-16'>
+            <PDFDownloadLink document={<ReactPDF />} fileName='blog'>
+                {({ loading }) => (loading ? <button >Loading Document...</button> : <button className="btn btn-primary ">Download PDF</button>)}
+            </PDFDownloadLink>
+            <div className="collapse mb-6 mt-6 collapse-arrow">
                 <input type="checkbox" className="peer" />
                 <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
                     Differences between uncontrolled and controlled components.
@@ -19,19 +24,14 @@ const Blog = () => {
                 </div>
                 <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
                     <p>
-                        <li>The prop can be of any data type.</li>
-                        <li>The prop should be a Boolean.</li>
-                        <li>PropTypes.number : The prop should be a number.</li>
-                        <li>PropTypes.string : The prop should be a string.</li>
-                        <li>PropTypes.func : The prop should be a function.</li>
-                        <li>PropTypes.array : The prop should be an array.</li>
+                        Import the PropTypes library in your component using import PropTypes from 'prop-types'; Then Define the expected data types for your props using the propTypes object inside your component. Specify the data type for each prop using PropTypes, such as PropTypes.string, PropTypes.number, PropTypes.bool, etc. Must be Assign the propTypes object to your component using the MyComponent.propTypes syntax.
                     </p>
                 </div>
             </div>
             <div className="collapse mb-6 collapse-arrow">
                 <input type="checkbox" className="peer" />
                 <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-                    Difference between nodejs and express js.
+                    Difference between nodejs and express js.?
                 </div>
                 <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
                     <p>NodeJS is an event-driven, non-blocking I/O model using JavaScript as its main language. It helps to build scalable network applications. Express is a minimal and flexible Node. js web application framework that provides a robust set of features for web and mobile applications.</p>
