@@ -1,12 +1,12 @@
 import React from 'react';
-import img1 from '../../../public/abhishek-hajare-_3dTLrMwiW8-unsplash.jpg';
-import img2 from '../../../public/aigars-peda-a_iKAg00LN4-unsplash.jpg';
-import img3 from '../../../public/nik-owens-40OJLYVWeeM-unsplash.jpg';
-import img4 from '../../../public/olayinka-babalola-r01ZopTiEV8-unsplash.jpg';
-import img5 from '../../../public/pinar-kucuk-Ae7jQFDTPk4-unsplash.jpg';
-import img6 from '../../../public/sorin-popa-XAxvKp0tdwU-unsplash.jpg';
-import img7 from '../../../public/stories-v1rUvnVMMkM-unsplash.jpg';
-import img8 from '../../../public/abhishek-hajare-_3dTLrMwiW8-unsplash.jpg'
+import img1 from '../../assets/abhishek-hajare-_3dTLrMwiW8-unsplash.jpg';
+import img2 from '../../assets/aigars-peda-a_iKAg00LN4-unsplash.jpg';
+import img3 from '../../assets/nik-owens-40OJLYVWeeM-unsplash.jpg';
+import img4 from '../../assets/olayinka-babalola-r01ZopTiEV8-unsplash.jpg';
+import img5 from '../../assets/sorin-popa-XAxvKp0tdwU-unsplash.jpg';
+import img6 from '../../assets/pinar-kucuk-Ae7jQFDTPk4-unsplash.jpg';
+import img7 from '../../assets/stories-v1rUvnVMMkM-unsplash.jpg';
+import img8 from '../../assets/abhishek-hajare-_3dTLrMwiW8-unsplash.jpg'
 
 const FoodGallery = () => {
     return (
