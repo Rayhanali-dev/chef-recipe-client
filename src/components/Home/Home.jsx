@@ -2,8 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefCard from '../ChefCard/ChefCard';
 import Banner from '../Banner/Banner';
-import BookTable from '../BookTable/BookTable';
 import FoodGallery from '../FoodGallery/FoodGallery';
+import BookTable from '../BookTable/BookTable';
 
 
 const Home = () => {
