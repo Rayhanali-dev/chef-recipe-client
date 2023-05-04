@@ -13,6 +13,7 @@ import Blog from './components/Blog/Blog.jsx';
 import Recipe from './components/Recipe/Recipe.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/provides/AuthProvider.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef/:id',
-        element: <Recipe></Recipe>,
+        element: <PrivateRoute><Recipe></Recipe></PrivateRoute>,
         loader: ({params}) => fetch(`https://chef-recipe-server-rayhanali-dev.vercel.app/chef/${params.id}`)
       }
     ]
