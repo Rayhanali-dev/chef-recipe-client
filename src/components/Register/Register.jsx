@@ -4,7 +4,7 @@ import { AuthContext } from '../provides/AuthProvider';
 import { useState } from 'react';
 
 const Register = () => {
-    const {createUser, profile} = useContext(AuthContext);
+    const {createUser, updateProfileAndPhoto} = useContext(AuthContext);
     const [error, setError] = useState('')
     const handleRegister = (event) => {
         event.preventDefault();
@@ -19,13 +19,16 @@ const Register = () => {
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+            profileUpdate(createdUser, name, photo)
         })
         .catch(error => {
             setError(error.message)
             console.log(error.message);
         })
-        
-        profile(name, photo)
+    }
+
+    const profileUpdate = () => {
+        updateProfileAndPhoto(name, photo)
         .then(result => {
             const registerUser = result.user;
             console.log(registerUser);
@@ -67,7 +70,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name='photo' required placeholder="Photo URL" className="input input-bordered" />
+                                <input type="text" name='photo' placeholder="Photo URL" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>

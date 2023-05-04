@@ -13,12 +13,14 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
+        
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const profile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
+    const updateProfileAndPhoto = (user, name, photo) => {
+        setLoading(true)
+        return updateProfile(user, {
             displayName: name, photoURL: photo
         })
     }
@@ -59,7 +61,7 @@ const AuthProvider = ({ children }) => {
         loading,
         googleP,
         githubProvider,
-        profile
+        updateProfileAndPhoto
     }
 
     return (
