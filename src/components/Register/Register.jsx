@@ -19,15 +19,12 @@ const Register = () => {
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
-            profileUpdate(createdUser, name, photo)
         })
         .catch(error => {
             setError(error.message)
             console.log(error.message);
         })
-    }
 
-    const profileUpdate = () => {
         updateProfileAndPhoto(name, photo)
         .then(result => {
             const registerUser = result.user;
@@ -38,6 +35,10 @@ const Register = () => {
             console.log(error.message);
         })
     }
+
+
+        
+
 
     return (
         <div>
