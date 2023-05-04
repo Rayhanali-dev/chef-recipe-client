@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provides/AuthProvider';
+import { useState } from 'react';
 
 const Register = () => {
-
     const {createUser} = useContext(AuthContext);
-
+    const [error, setError] = useState('')
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -21,6 +21,7 @@ const Register = () => {
             console.log(createdUser);
         })
         .catch(error => {
+            setError(error.message)
             console.log(error.message);
         })
     }
@@ -65,6 +66,7 @@ const Register = () => {
                                 <p className='text-center text-xl'>Already have an account? please <Link className='link link-primary' to={`/login`}>Login</Link></p>
                             </label>
                         </form>
+                        <p className='text-center mb-4 text-red-500'>{error}</p>
                     </div>
                 </div>
             </div>

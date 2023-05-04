@@ -5,6 +5,7 @@ import { AuthContext } from '../provides/AuthProvider';
 
 const Login = () => {
     const { signIn, googleP, githubProvider } = useContext(AuthContext);
+    const [error, setError] = useState('')
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -22,6 +23,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
+                setError(error.message)
                 console.log(error.message);
             })
     }
@@ -82,6 +84,7 @@ const Login = () => {
                                 <p className='text-center text-xl'>If You New Here! please <Link className='link link-primary' to={`/register`}>Register</Link></p>
                             </label>
                         </div>
+                        <p className='text-red-400 text-center mb-5'>{error}</p>
                     </div>
                 </div>
             </div>

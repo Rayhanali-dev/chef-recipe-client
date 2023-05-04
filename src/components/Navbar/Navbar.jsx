@@ -30,6 +30,15 @@ const Navbar = () => {
                                 <NavLink className={({ isActive }) =>
                                     isActive ? "text-orange-400" : ""
                                 } to={`/blog`}>Blog</NavLink>
+
+                                <NavLink className={({ isActive }) =>
+                                    isActive ? "text-orange-400" : ""
+                                } to={`/login`}>Login</NavLink>
+
+                                <NavLink className={({ isActive }) =>
+                                    isActive ? "text-orange-400" : ""
+                                } to={`/register`}>Register</NavLink>
+
                                 <div className="navbar-end">
                                     {
                                         user ? <div className='flex gap-6 items-center'>
@@ -50,6 +59,12 @@ const Navbar = () => {
                             <NavLink className={({ isActive }) =>
                                 isActive ? "text-orange-400" : ""
                             } to={`/blog`}>Blog</NavLink>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? "text-orange-400" : ""
+                            } to={`/login`}>Login</NavLink>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? "text-orange-400" : ""
+                            } to={`/register`}>Register</NavLink>
                         </ul>
                     </div>
                     <div className="navbar-end">

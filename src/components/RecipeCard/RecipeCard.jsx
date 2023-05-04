@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 const RecipeCard = ({ recipe }) => {
     const notify = () => toast("Add To Favourite");
     console.log(recipe);
@@ -20,10 +22,13 @@ const RecipeCard = ({ recipe }) => {
                     {
                         ingredients.map((item, index) => <li key={index}>{item}</li>)
                     }
-                    <p>Ratings: {rating}</p>
+                    <div className='flex justify-start gap-3'>
+                        <Rating readOnly style={{ maxWidth: 100 }} value={rating} />
+                        <p>{rating}</p>
+                    </div>
                     <p>Cooking Method: {Method}</p>
                     <div className="card-actions ">
-                        <button disabled={disable} onClick={handlerAddToFav}  className="btn btn-primary w-full mt-4">Add To Favourite</button>
+                        <button disabled={disable} onClick={handlerAddToFav} className="btn btn-primary w-full mt-4">Add To Favourite</button>
                         <ToastContainer></ToastContainer>
                     </div>
                 </div>
