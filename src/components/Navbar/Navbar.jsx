@@ -51,7 +51,7 @@ const Navbar = () => {
                         </div>
                         <Link to={`/`} className="btn btn-ghost normal-case text-xl">Foxeresto</Link>
                     </div>
-                    <div className="navbar-center hidden lg:flex">
+                    <div className="navbar-center hidden md:block lg:flex">
                         <ul className="menu gap-6 menu-horizontal px-1">
                             <NavLink className={({ isActive }) =>
                                 isActive ? "text-orange-400" : ""
