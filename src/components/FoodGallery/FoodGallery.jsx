@@ -18,28 +18,28 @@ const FoodGallery = () => {
                         dpropriately benchmark networks.</p>
                 </div>
                 <div className='grid grid-cols-1 mb-9 mg:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img1} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img2} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img3} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-700 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img4} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img5} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img6} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img7} alt="" />
                     </div>
-                    <div className='h-[400px] transition hover:scale-105 hover:duration-200 hover:ease-linear'>
+                    <div className='h-[400px]'>
                         <img className='w-full h-full object-cover' src={img8} alt="" />
                     </div>
                 </div>
